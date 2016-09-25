@@ -1,0 +1,203 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
+    android:background="#4aff8cfa">
+
+    <com.example.alexandercheng.hw2.WhiteDie
+        android:layout_width="100sp"
+        android:layout_height="100sp"
+        android:id="@+id/WhiteDie1"
+        android:clickable="true"
+        android:onClick="roll"
+        android:nestedScrollingEnabled="false"
+        android:contentDescription="dice"
+        android:contextClickable="false"
+        android:background="@drawable/white_die_6_disabled"
+        android:longClickable="false"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <com.example.alexandercheng.hw2.WhiteDie
+        android:layout_width="100sp"
+        android:layout_height="100sp"
+        android:id="@+id/WhiteDie2"
+        android:clickable="true"
+        android:onClick="roll"
+        android:nestedScrollingEnabled="false"
+        android:contentDescription="dice"
+        android:contextClickable="false"
+        android:background="@drawable/white_die_6_disabled"
+        android:longClickable="false"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/WhiteDie1"
+        android:layout_toStartOf="@+id/WhiteDie1" />
+
+    <com.example.alexandercheng.hw2.RedDie
+        android:layout_width="100sp"
+        android:layout_height="100sp"
+        android:id="@+id/RedDie1"
+        android:clickable="true"
+        android:onClick="roll"
+        android:nestedScrollingEnabled="false"
+        android:contentDescription="dice"
+        android:contextClickable="false"
+        android:background="@drawable/red_die_6_disabled"
+        android:longClickable="false"
+        android:layout_below="@+id/WhiteDie2"
+        android:layout_alignLeft="@+id/WhiteDie2"
+        android:layout_alignStart="@+id/WhiteDie2" />
+
+    <com.example.alexandercheng.hw2.RedDie
+        android:layout_width="100sp"
+        android:layout_height="100sp"
+        android:id="@+id/RedDie2"
+        android:clickable="true"
+        android:onClick="roll"
+        android:nestedScrollingEnabled="false"
+        android:contentDescription="dice"
+        android:contextClickable="false"
+        android:background="@drawable/red_die_6_disabled"
+        android:longClickable="false"
+        android:layout_below="@+id/WhiteDie1"
+        android:layout_toRightOf="@+id/WhiteDie2"
+        android:layout_toEndOf="@+id/WhiteDie2" />
+
+    <com.example.alexandercheng.hw2.RedDie
+        android:layout_width="100sp"
+        android:layout_height="100sp"
+        android:id="@+id/RedDie3"
+        android:clickable="true"
+        android:onClick="roll"
+        android:nestedScrollingEnabled="false"
+        android:contentDescription="dice"
+        android:contextClickable="false"
+        android:background="@drawable/red_die_6_disabled"
+        android:longClickable="false"
+        android:layout_below="@+id/WhiteDie1"
+        android:layout_toRightOf="@+id/WhiteDie1"
+        android:layout_toEndOf="@+id/WhiteDie1" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start"
+        android:id="@+id/startButton"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignTop="@+id/startButton"
+        android:layout_toRightOf="@+id/startButton"
+        android:layout_toEndOf="@+id/startButton"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="58dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Attack"
+            android:id="@+id/textView" />
+
+        <EditText
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/AttackField"
+            android:layout_weight="1"
+            android:layout_gravity="left" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Defense"
+            android:id="@+id/textView3"
+            android:layout_weight="0.31" />
+
+        <EditText
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/DefenseField"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/RedDie1"
+        android:layout_alignLeft="@+id/RedDie1"
+        android:layout_alignStart="@+id/RedDie1"
+        android:layout_marginTop="57dp">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Attacking Soldiers: 0"
+                android:id="@+id/attackText"
+                android:layout_column="0" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ProgressBar
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/attackBar"
+                android:layout_column="0"
+                android:layout_span="150" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Defending Soldiers: 0"
+                android:id="@+id/defenseText"
+                android:layout_column="0" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ProgressBar
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/defenseBar"
+                android:layout_column="0"
+                android:layout_span="151" />
+        </TableRow>
+    </TableLayout>
+
+</RelativeLayout>

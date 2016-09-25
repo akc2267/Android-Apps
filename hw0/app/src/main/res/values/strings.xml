@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">hw0</string>
+
+    <string name="uteid">akc2267</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+</resources>
